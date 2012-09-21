@@ -8,7 +8,7 @@
 
 	<properties>
 		<appVersion>0.0.1-SNAPSHOT</appVersion>
-		<javafx.runtime.lib.jar>${JAVAFX_HOME}</javafx.runtime.lib.jar>
+		<javafx.runtime.lib.jar>${JAVAFX_RUNTIME}</javafx.runtime.lib.jar>
 	</properties>
 
 
