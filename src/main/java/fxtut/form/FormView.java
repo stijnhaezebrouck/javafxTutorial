@@ -14,7 +14,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.GridPaneBuilder;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
-import javafx.scene.text.FontBuilder;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextBuilder;
@@ -38,14 +37,7 @@ public class FormView extends GridPane {
 
 		addTitle("Welcome");
 		addUserFieldWithLabel("User Name:");
-
-
-
-		Label pw = new Label("Password:");
-		add(pw, 0, 2);
-
-		PasswordField pwBox = new PasswordField();
-		add(pwBox, 1, 2);
+		addPasswordFieldWithLabel("Password:");
 
 		Button btn = new Button("Sign in");
 		HBox hbBtn = new HBox(10);
@@ -78,12 +70,13 @@ public class FormView extends GridPane {
 	}
 	
 	private void addUserFieldWithLabel(String label) {
-		int row = currentRow++;
-		Label userName = new Label(label);
-		add(userName, LEFT, row);
-
-		TextField userTextField = new TextField();
-		add(userTextField, RIGHT, row);		
+		add(new Label(label), LEFT, currentRow);
+		add(new TextField(), RIGHT, currentRow++);		
+	}
+	
+	private void addPasswordFieldWithLabel(String label) {
+		add(new Label(label), LEFT, currentRow);
+		add(new PasswordField(), RIGHT, currentRow++);
 	}
 
 	private void setupLayout() {
